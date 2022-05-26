@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>It's Sunny Somwhere!</title>
+</head>
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <h1 class="main-title">It's Sunny Somewhere!</h1>
+        <p>Weather app that can brighten your day!</p>
+    </header>
+
+    <main class="flex-row justify-space-between">
+        <!-- Section that includes the search box and the search history-->
+        <section class="col-12 col-md-4">
+            <!-- Searchbox -->
+            <div class="card">
+                <h3 class="card-header">Search by City</h3>
+                <form id="user-form" class="card-body">
+                    <label class="form-label" for="cityname">City Name</label>
+                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+            <!-- search history -->
+            <div class="card">
+                <h3 class="card-header">Search History</h3>
+                <div id="search-history">
+                    <a id="history-btn" class="history-btn"> <Span>San Francisco</Span></a>
+                </div>
+                <button id="clear-history" class="btn">Clear History</button>
+            </div>
+       </section>
+
+       <!-- display weather details and 5 day forecast -->
+       <section class="col-12 col-md-8">
+           <!-- today's forecast -->
+           <div class="card col-12 col-md-4">
+               <h3 class="card-header">Today</h3>
+               <h4 id="city">San Diego</h4>
+               <p id="desc">Cloudy</p>
+               <p id="temp">78</p>
+           </div>
+           <div class="card">
+               <h3 class="card-header">Next 5 days:</h3>
+           </div>
+           <!-- next 5 days forecast -->
+           <div class="flex-row justify-space-between">
+               <ol id="forecast-list"> 
+                   <li class="card">
+                       <h3 class="card-header">Tuesday</h3>
+                       <p>desc</p>
+                       <p>temp</p>
+                   </li>
+                   
+               </ol>
+           </div>
+       </section>
+
+
+
+    </main>
+    
+</body>
+</html>
