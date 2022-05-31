@@ -1,5 +1,7 @@
 # its-sunny-somewhere
 
+https://el-mariachi760.github.io/its-sunny-somewhere/
+
 ## User Story
 - AS A traveler
 - I WANT to see the weather outlook for multiple cities
@@ -19,3 +21,6 @@
 - WHEN I click on a city in the search history
 - THEN I am again presented with current and future conditions for that city
 
+
+## Screenshot
+![image](https://user-images.githubusercontent.com/94568874/171124667-f05f4942-40af-43d0-bcc6-d18c42774a6c.png)
