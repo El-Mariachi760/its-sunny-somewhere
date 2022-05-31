@@ -88,7 +88,7 @@
 }
 
 .card-body {
-    padding: 2.5%;
+    flex: auto;
 }
 
 .weather-card {
@@ -96,6 +96,23 @@
       border: 1.5px solid var(--dark);
       border-radius: var(--border-radius);
   } 
+
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color:white;
+}
+
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.favorable{
+    padding: 3px;
+    background-color: green;
+    color:white;
+}
 
 /* form */
 .form-label,

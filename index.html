@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>It's Sunny Somwhere!</title>
 </head>
@@ -32,7 +33,7 @@
             <div class="card">
                 <h3 class="card-header">Search History</h3>
                 <div id="search-history">
-                    <a id="history-btn" class="history-btn"> <Span>San Francisco</Span></a>
+                    <!-- <a id="history-btn" class="history-btn"> <Span>San Francisco</Span></a> -->
                 </div>
                 <button id="clear-history" class="btn">Clear History</button>
             </div>
@@ -41,8 +42,8 @@
        <!-- display weather details and 5 day forecast -->
        <section class="col-12 col-md-8">
            <!-- today's forecast -->
-           <div class="card col-12 col-md-4">
-               <h3 class="card-header">Today</h3>
+           <div class="card text-center">
+               <h3 id="current-day"class="card-header"></h3>
                <h4 id="city"></h4>
                <p id="desc"></p>
                <p id="temp"></p>
@@ -51,15 +52,7 @@
                <h3 class="card-header">Next 5 days:</h3>
            </div>
            <!-- next 5 days forecast -->
-           <div class="flex-row justify-space-between" id="forecast-list">
-               <!-- <div class="d-flex" > 
-                   <li class="card">
-                       <h3 class="card-header">Tuesday</h3>
-                       <p>desc</p>
-                       <p>temp</p>
-                   </li>
-                   
-               </div> -->
+           <div class="row" id="forecast-list">
            </div>
        </section>
 
