@@ -142,6 +142,7 @@ var getUVindex = function(data){
 }
 
 var displayUvIndex = function(index) {
+  uvIndexcontainerEl.textContent = '';
   var uvIndexEl = document.createElement("div");
   uvIndexEl.textContent = "UV Index: "
   uvIndexEl.classList = "list-group-item"
