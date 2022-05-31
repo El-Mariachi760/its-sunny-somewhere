@@ -39,11 +39,14 @@ var getWeather = function(cityName) {
       var tempValue = data['main']['temp'];
       var descValue = data['weather'][0]['description']
       var windValue = data['wind']['speed']
+      var humdValue = data['main']['humidity']
       city.innerHTML = nameValue;
       temp.innerHTML = tempValue + " °F";
       desc.innerHTML = descValue;
       wind.innerHTML = windValue + " MPH"
+      humd.innerHTML = "HMD: " + humdValue + "%"
       console.log(data.name)
+      console.log(data)
 
       getUVindex(data);
   })
@@ -72,8 +75,6 @@ function displayForecast(weather) {
      var forecastEl=document.createElement("div");
       //  forecastEl.classList = "card col-lg-4 bg-primary text-light m-3";
        forecastEl.classList = "card col-lg-3.5 d-flex align-items-stretch bg-primary text-light m-1";
- 
-       console.log(dailyForecast)
  
        //create date element
        var forecastDate = document.createElement("h5")
@@ -114,7 +115,7 @@ function displayForecast(weather) {
  
        var forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
-       forecastHumEl.textContent = "HMD: " + dailyForecast.main.humidity + "  %";
+       forecastHumEl.textContent = "HMD: " + dailyForecast.main.humidity + "%";
  
        //append to forecast card
        forecastEl.appendChild(forecastHumEl);
