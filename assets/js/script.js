@@ -41,9 +41,9 @@ var getWeather = function(cityName) {
       var windValue = data['wind']['speed']
       var humdValue = data['main']['humidity']
       city.innerHTML = nameValue;
-      temp.innerHTML = tempValue + " °F";
+      temp.innerHTML = "Temp: " + tempValue + " °F";
       desc.innerHTML = descValue;
-      wind.innerHTML = windValue + " MPH"
+      wind.innerHTML = "Wind: " + windValue + " MPH"
       humd.innerHTML = "HMD: " + humdValue + "%"
       console.log(data.name)
       console.log(data)
