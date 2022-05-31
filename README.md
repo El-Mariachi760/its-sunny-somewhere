@@ -23,4 +23,5 @@ https://el-mariachi760.github.io/its-sunny-somewhere/
 
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/94568874/171124667-f05f4942-40af-43d0-bcc6-d18c42774a6c.png)
+![image](https://user-images.githubusercontent.com/94568874/171281027-35baa160-1c75-4c9c-89aa-dec03fba3fb2.png)
+
