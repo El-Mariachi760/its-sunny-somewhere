@@ -2,6 +2,7 @@ var userFormEl = document.querySelector("#user-form");
 var cityNameInputEl = document.querySelector("#cityname");
 var forecastContainerEl = document.querySelector("#forecast-list");
 var historyBtnEl = document.querySelector("#search-history");
+var uvIndexcontainerEl = document.querySelector("#UVindex")
 
 var cities = [];
 
@@ -37,10 +38,14 @@ var getWeather = function(cityName) {
       var nameValue = data['name'];
       var tempValue = data['main']['temp'];
       var descValue = data['weather'][0]['description']
+      var windValue = data['wind']['speed']
       city.innerHTML = nameValue;
       temp.innerHTML = tempValue + " °F";
       desc.innerHTML = descValue;
+      wind.innerHTML = windValue + " MPH"
       console.log(data.name)
+
+      getUVindex(data);
   })
 };
 
@@ -86,12 +91,26 @@ function displayForecast(weather) {
        forecastEl.appendChild(weatherIcon);
        
        //create temperature span
-       var forecastTempEl=document.createElement("span");
-       forecastTempEl.classList = "card-body text-center";
-       forecastTempEl.textContent = dailyForecast.main.temp + " °F";
+       var forecastTempHighEl=document.createElement("span");
+       forecastTempHighEl.classList = "card-body text-center";
+       forecastTempHighEl.textContent = dailyForecast.main.temp_max + " °F";
  
         //append to forecast card
-        forecastEl.appendChild(forecastTempEl);
+        forecastEl.appendChild(forecastTempHighEl);
+
+      //  var forecastTempLowEl=document.createElement("span");
+      //  forecastTempLowEl.classList = "card-body text-center";
+      //  forecastTempLowEl.textContent = "Low:" + dailyForecast.main.temp_min + " °F";
+ 
+      //   //append to forecast card
+      //   forecastEl.appendChild(forecastTempLowEl);
+
+       // create wind speed span
+       var forecastWindEl = document.createElement("span");
+       forecastWindEl.classList = "card-body text-center";
+       forecastWindEl.textContent = "Wind: " + dailyForecast.wind.speed + " MPH"
+
+       forecastEl.appendChild(forecastWindEl);
  
        var forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
@@ -105,6 +124,43 @@ function displayForecast(weather) {
         forecastContainerEl.appendChild(forecastEl);
       console.log(dailyForecast);
    }
+};
+
+// value for UV index, fuction ran when search
+var getUVindex = function(data){
+  var lon = data.coord.lon
+  var lat = data.coord.lat
+  var UVurl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
+
+  fetch(UVurl)
+  .then(function(response){
+      response.json().then(function(data){
+          displayUvIndex(data)     
+      });
+  });
+}
+
+var displayUvIndex = function(index) {
+  var uvIndexEl = document.createElement("div");
+  uvIndexEl.textContent = "UV Index: "
+  uvIndexEl.classList = "list-group-item"
+
+  uvIndexValue = document.createElement("span")
+  uvIndexValue.textContent = index.value
+
+  if(index.value <=2){
+      uvIndexValue.classList = "favorable"
+  }else if(index.value >2 && index.value<=8){
+      uvIndexValue.classList = "moderate "
+  }
+  else if(index.value >8){
+      uvIndexValue.classList = "severe"
+  };
+
+  uvIndexEl.appendChild(uvIndexValue);
+
+  //append index to current weather
+  uvIndexcontainerEl.appendChild(uvIndexEl);
 };
 
 var searchHistory = function(searchHistory) {
