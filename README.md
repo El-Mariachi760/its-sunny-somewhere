@@ -19,3 +19,7 @@
 - WHEN I click on a city in the search history
 - THEN I am again presented with current and future conditions for that city
 
+
+## Screenshot
+![image](https://user-images.githubusercontent.com/94568874/171281027-35baa160-1c75-4c9c-89aa-dec03fba3fb2.png)
+
